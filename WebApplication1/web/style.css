@@ -62,7 +62,7 @@ h4{
 }
 
 #kyhieu{
-    margin: 50px 50px 50px 80px;
+    margin: 50px 30px 50px 80px;
     width: 700px;
 }
 
@@ -84,12 +84,13 @@ tr:nth-child(even) {
 }
 
 h2{
-    width: 100%;
+    width: 500px;
     text-align: center;
 }
 
 .button {
   border: none;
+  border-radius: 12px;
   color: white;
   padding: 40px 60px;
   text-align: center;
@@ -118,10 +119,10 @@ h2{
 }
 
 #kyten{
-    border: 2px solid #D6EEEE;
+    border: 2px solid #FF8C00;
     border-radius: 12px;
     padding: 5px;
-    margin: 50px 70px 30px 200px;
+    margin: 50px 70px 30px 0px;
     text-align: center;
     height: 150px;
 }
@@ -132,4 +133,11 @@ h4{
 p{
     width: 150px;
     
+}
+
+.continer{
+        background-image: url('one2.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;
 }
