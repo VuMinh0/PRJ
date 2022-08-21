@@ -85,7 +85,7 @@
 
                             
                                <c:forEach items="${sessionScope.time}" var="t">
-                                   <c:if test="${t.date eq d}">
+                                   <c:if test="${t.date eq d && e.eid eq t.tid}">
                                        ${t.status}
                                    </c:if>
                         </c:forEach>
