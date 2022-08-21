@@ -45,6 +45,14 @@ public class DateTimeHelper {
         return newdate;
     }
     
+     public static Date addDays2(Date d) {
+        Calendar c = Calendar.getInstance();
+        c.setTime(d);
+        c.add(Calendar.DATE, 0);
+        Date newdate = c.getTime();
+        return newdate;
+    }
+    
     public static Date addMonths(Date d, int months) {
         Calendar c = Calendar.getInstance();
         c.setTime(d);
