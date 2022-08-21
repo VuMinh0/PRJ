@@ -18,8 +18,8 @@
         <title>Chấm Công</title>
         <link rel="stylesheet" href="style.css">
     </head>
-            <jsp:useBean id="dt" class="helper.DateTimeHelper"/>
-        <body class="continer">
+    <jsp:useBean id="dt" class="helper.DateTimeHelper"/>
+    <body class="continer">
         <h4>
             <i>
                 <b>CÔNG TY TNHH Trung Nguyên</b>
@@ -40,30 +40,30 @@
 
             <tr></tr>
             <c:forEach items="${requestScope.dates}" var="d">
-                    <th
-                        <c:if test="${dt.getDayOfWeek(d) eq 6 or dt.getDayOfWeek(d) eq 7}">
-                                style="background-color: yellow;"
-                            </c:if>
-                        >
-                        
-                        <fmt:formatDate pattern = "dd" 
+                <th
+                    <c:if test="${dt.getDayOfWeek(d) eq 6 or dt.getDayOfWeek(d) eq 7}">
+                        style="background-color: yellow;"
+                    </c:if>
+                    >
+
+                    <fmt:formatDate pattern = "dd" 
                                     value = "${d}" /> <br/>
 
-                    </th>
-                    </c:forEach>
-                    
+                </th>
+            </c:forEach>
+
             <tr></tr>
             <c:forEach items="${requestScope.dates}" var="d">
-                    <th
-                        <c:if test="${dt.getDayOfWeek(d) eq 6 or dt.getDayOfWeek(d) eq 7}">
-                                style="background-color: yellow;"
-                            </c:if>
-                        >
-                        
+                <th
+                    <c:if test="${dt.getDayOfWeek(d) eq 6 or dt.getDayOfWeek(d) eq 7}">
+                        style="background-color: yellow;"
+                    </c:if>
+                    >
+
                     <fmt:formatDate pattern = "EEE" 
                                     value = "${d}" />
-                    </th>
-                    </c:forEach>
+                </th>
+            </c:forEach>
 
             <th>Vắng mặt</th>
             <th>Nghỉ Lễ</th>            
@@ -71,46 +71,17 @@
 
 
 
-            <tr>
-                <th>1</th>
-                <th>Lê Hoàng Anh</th>
-                <th>TP KT</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>No</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>No</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>No</th>
-                <th>27</th>
-                <th>2</th>
-                <th>2</th>
+            <c:forEach items="${sessionScope.emp}" var="e">
+                <tr>
+                    <th>${e.eid}</th>
+                    <th>${e.name}</th>
+                    <th>${e.chucvu}</th>
+                        <c:forEach items="${sessionScope.time}" var="t">
+                            <th>${e.status}</th>
+                        </c:forEach>
+                </tr>
+            </c:forEach>
 
-            </tr>
             <tr>
                 <th>2</th>
                 <th>Nguyễn Quang Hòa</th>
@@ -413,6 +384,9 @@
 
         <!--    <a href="#" id="nutnhan1">TÍNH SỐ NGÀY CÔNG</a>
             <a href="#" id="nutnhan2">TÍNH TIỀN LƯƠNG</a>-->
+
+
+
     </body>
-    
+
 </html>
