@@ -21,37 +21,40 @@ import model.Timesheet;
  */
 public class EmpDBContext extends DBContext {
 
-    public ArrayList<Emp> getEmp(Date day) throws SQLException {
-        ArrayList<Emp> employees = new ArrayList<>();
+    public Emp getEmpById(int eid) throws SQLException {
         try {
-            String sql = "select e.eid,name,chucvu, t.date  from Emp e inner join \n"
-                    + "Timesheet t on t.eid = e.eid where t.[date] = ?";
+            String sql = "SELECT * FROM Emp3 WHERE eid = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setTimestamp(1, DateTimeHelper.getTimeStamp(DateTimeHelper.addDays2(day)));
+            stm.setInt(1, eid);
             ResultSet rs = stm.executeQuery();
-            Emp curEmp = new Emp();
-            curEmp.setEid(-1);
             while (rs.next()) {
-                int eid = rs.getInt("eid");
-                if (eid != curEmp.getEid()) {
-                    curEmp = new Emp();
-                    curEmp.setEid(eid);
-                    curEmp.setName(rs.getString("name"));
-                    curEmp.setChucvu(rs.getString("chucvu"));
-                    employees.add(curEmp);
-                }
+                Emp e = new Emp();
+                e.setEid(rs.getInt("eid"));
+                e.setName(rs.getString("ename"));
+                e.setChucvu(rs.getString("chucvu"));
+                return e;
 
-                if (rs.next()) {
-                    Timesheet t = new Timesheet();
-                    t.setEid(curEmp);
-                    t.setDate(DateTimeHelper.getDateFrom(rs.getTimestamp("date")));
-                    curEmp.getTimesheets().add(t);
-                }
             }
         } catch (SQLException ex) {
             Logger.getLogger(EmpDBContext.class.getName()).log(Level.SEVERE, null, ex);
 
         }
-        return employees;
+        return null;
+    }
+
+    public ArrayList<Emp> getAllEmp() {
+        ArrayList<Emp> emp = new ArrayList<>();
+        try {
+            String sql = "SELECT * FROM Emp3";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                emp.add(getEmpById(rs.getInt("eid")));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(EmpDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return emp;
     }
 }

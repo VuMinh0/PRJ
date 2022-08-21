@@ -14,6 +14,26 @@ public class Timesheet {
     private int tid;
     private int eid;
     private Date date;
+    private String status;
+
+    public Timesheet() {
+    }
+
+    public Timesheet(int tid, int eid, Date date, String status) {
+        this.tid = tid;
+        this.eid = eid;
+        this.date = date;
+        this.status = status;
+    }
+    
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public int getTid() {
         return tid;

@@ -7,6 +7,9 @@ Timesheet t on t.eid = e.eid
 select e.eid,name,chucvu, t.date  from Emp e inner join 
 Timesheet t on t.eid = e.eid where t.[date] = '2022-01-21'
 
+select e.eid,ename,chucvu, t.date  from Emp3 e inner join 
+Timesheet3 t on t.eid = e.eid 
+
 --Nhung ngay nhan vien nghi va ly do
 select e.eid,[name],chucvu, l.[from],[to], r.reason,[check] from Emp e, Leav l, Reason r  
 where e.eid = l.eid and l.rid = r.rid
