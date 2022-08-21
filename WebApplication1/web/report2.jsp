@@ -41,8 +41,8 @@
             <tr></tr>
             <c:forEach items="${requestScope.dates}" var="d">
                 <th
-                    <c:if test="${dt.getDayOfWeek(d) eq 6 or dt.getDayOfWeek(d) eq 7}">
-                        style="background-color: yellow;"
+                    <c:if test="${ dt.getDayOfWeek(d) eq 7}">
+                        style="background-color: #f2f2c0;"
                     </c:if>
                     >
 
@@ -55,8 +55,8 @@
             <tr></tr>
             <c:forEach items="${requestScope.dates}" var="d">
                 <th
-                    <c:if test="${dt.getDayOfWeek(d) eq 6 or dt.getDayOfWeek(d) eq 7}">
-                        style="background-color: yellow;"
+                    <c:if test="${ dt.getDayOfWeek(d) eq 7 }">
+                        style="background-color: #f2f2c0;"
                     </c:if>
                     >
 
@@ -78,8 +78,8 @@
                     <th>${e.chucvu}</th>
                      <c:forEach items="${requestScope.dates}" var="d">
                         <th 
-                            <c:if test="${dt.getDayOfWeek(d) eq 6 or dt.getDayOfWeek(d) eq 7}">
-                                style="background-color: yellow;"
+                            <c:if test="${ dt.getDayOfWeek(d) eq 7}">
+                                style="background-color: #f2f2c0;"
                             </c:if>
                             >
 
@@ -92,211 +92,19 @@
                             
                         </th>
                     </c:forEach>
-                        
+                    <c:if test="${t.status == Y}">
+                        <th>p</th> 
+                    </c:if>
+                           
+                        <th></th>     
+                        <th></th>     
+
                 </tr>
-            </c:forEach>
-
                 
-            <tr>
-                <th>2</th>
-                <th>Nguyễn Quang Hòa</th>
-                <th>NV Kỹ thuật</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>No</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>No</th>
-                <th>29</th>
-                <th>2</th>
-                <th>1</th>
+            </c:forEach>
+                
+                
 
-            </tr>
-            <tr>
-                <th>3</th>
-                <th>Hoàng Thị H.Khuyên</th>
-                <th>Kế Toán NM</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>No</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>N</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>No</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>N</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>N</th>
-                <th>31</th>
-                <th>0</th>
-                <th>3</th>
-
-            </tr>
-            <tr>
-                <th>4</th>
-                <th>Nguyễn Công Hưởng</th>
-                <th>Thủ kho</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>No</th>
-                <th>24</th>
-                <th>4</th>
-                <th>2</th>
-
-            </tr>
-            <tr>
-                <th>5</th>
-                <th>Phạm Thị Thu</th>
-                <th>Thủ kho</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>No</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>N</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>No</th>
-                <th>28</th>
-                <th>2</th>
-                <th>2</th>
-
-            </tr>
-            <tr>
-                <th>6</th>
-                <th>Vũ Minh Hiếu</th>
-                <th>Thủ kho</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>No</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>Y</th>
-                <th>N</th>
-                <th>25</th>
-                <th>4</th>
-                <th>2</th>
-
-            </tr>
         </table>
         <br>
         <div id = "main">
@@ -307,10 +115,6 @@
                         <tr>
                             <th>Đi Làm</th>
                             <td>Y</td>
-                        </tr>
-                        <tr>
-                            <th>Không Đi Làm</th>
-                            <td>No</td>
                         </tr>
                         <tr>
                             <th>Ốm, Điều dưỡng</th>
@@ -337,7 +141,7 @@
                             <td>NB</td>
                         </tr>
                         <tr>
-                            <th>Nghỉ Nửa Ngày </th>
+                            <th>Nghỉ Nửa Ngày Không Lương</th>
                             <td>1/2K</td>
                         </tr>
                         <tr>
