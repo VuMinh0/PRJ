@@ -71,25 +71,246 @@
 
 
 
-            <c:forEach items="${requestScope.timesheet}" var="e">
-                <tr>
-                    <th>${e.ename}</th>
-                    <c:forEach items="${requestScope.dates}" var="d">
-                        <th 
-                            <c:if test="${dt.getDayOfWeek(d) eq 6 or dt.getDayOfWeek(d) eq 7}">
-                                style="background-color: yellow;"
-                            </c:if>
-                            >
+            <tr>
+                <th>1</th>
+                <th>Lê Hoàng Anh</th>
+                <th>TP KT</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>No</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>No</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>No</th>
+                <th>27</th>
+                <th>2</th>
+                <th>2</th>
 
-                            <c:forEach items="${e.timesheets}" var="t">
-  
-                            </c:forEach>
-                        </th>
-                    </c:forEach>
-                    <th>${e.getNumberOfWorkingDays()}</th>
-                    <th>${e.getNumberOfWorkingHours()}</th>
-                </tr>
-            </c:forEach>
+            </tr>
+            <tr>
+                <th>2</th>
+                <th>Nguyễn Quang Hòa</th>
+                <th>NV Kỹ thuật</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>No</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>No</th>
+                <th>29</th>
+                <th>2</th>
+                <th>1</th>
+
+            </tr>
+            <tr>
+                <th>3</th>
+                <th>Hoàng Thị H.Khuyên</th>
+                <th>Kế Toán NM</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>No</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>N</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>No</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>N</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>N</th>
+                <th>31</th>
+                <th>0</th>
+                <th>3</th>
+
+            </tr>
+            <tr>
+                <th>4</th>
+                <th>Nguyễn Công Hưởng</th>
+                <th>Thủ kho</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>No</th>
+                <th>24</th>
+                <th>4</th>
+                <th>2</th>
+
+            </tr>
+            <tr>
+                <th>5</th>
+                <th>Phạm Thị Thu</th>
+                <th>Thủ kho</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>No</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>N</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>No</th>
+                <th>28</th>
+                <th>2</th>
+                <th>2</th>
+
+            </tr>
+            <tr>
+                <th>6</th>
+                <th>Vũ Minh Hiếu</th>
+                <th>Thủ kho</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>No</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>Y</th>
+                <th>N</th>
+                <th>25</th>
+                <th>4</th>
+                <th>2</th>
+
+            </tr>
         </table>
         <br>
         <div id = "main">

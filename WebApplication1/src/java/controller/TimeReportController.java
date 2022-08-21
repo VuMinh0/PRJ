@@ -58,10 +58,10 @@ public class TimeReportController extends HttpServlet {
         Date end = DateTimeHelper.addDays(DateTimeHelper.addMonths(begin, 1), -1);
         ArrayList<Date> dates = DateTimeHelper.getDates(begin, end);
         TimeSheetDBContext db = new TimeSheetDBContext();
-        List<Timesheet> timesheet = db.getTimeSheet(eid, );
+//        List<Timesheet> timesheet = db.getTimeSheet(eid, );
         request.setAttribute("dates", dates);
         request.setAttribute("dates", dates);
-        request.setAttribute("employees", timesheet);
+//        request.setAttribute("employees", timesheet);
         request.getRequestDispatcher("report2.jsp").forward(request, response);
         
     }
