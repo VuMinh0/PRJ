@@ -4,9 +4,17 @@
         <servlet-name>TimeSheetReportController</servlet-name>
         <servlet-class>controller.TimeSheetReportController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TimeReportController</servlet-name>
+        <servlet-class>controller.TimeReportController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>TimeSheetReportController</servlet-name>
         <url-pattern>/report</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TimeReportController</servlet-name>
+        <url-pattern>/report2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

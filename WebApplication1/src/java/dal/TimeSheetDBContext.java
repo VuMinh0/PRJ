@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,6 +22,7 @@ import model.Timesheet;
 public class TimeSheetDBContext extends DBContext{
     
     public List<Timesheet> getTimeSheet(int eid, int month){
+//        public List<Timesheet> getTimeSheet(Date begin, Date end)
         List<Timesheet> timesheet = new ArrayList<>();
         try {
             String sql = "SELECT e.eid, e.ename, t.date, t.status FROM Emp3 e,  Salary3 s, Timesheet3 t\n" +
