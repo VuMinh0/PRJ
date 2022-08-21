@@ -71,17 +71,32 @@
 
 
 
-            <c:forEach items="${sessionScope.emp}" var="e">
+            <c:forEach items="${requestScope.emp}" var="e">
                 <tr>
                     <th>${e.eid}</th>
                     <th>${e.name}</th>
                     <th>${e.chucvu}</th>
-                        <c:forEach items="${sessionScope.time}" var="t">
-                            <th>${e.status}</th>
+                     <c:forEach items="${requestScope.dates}" var="d">
+                        <th 
+                            <c:if test="${dt.getDayOfWeek(d) eq 6 or dt.getDayOfWeek(d) eq 7}">
+                                style="background-color: yellow;"
+                            </c:if>
+                            >
+
+                            
+                               <c:forEach items="${sessionScope.time}" var="t">
+                                   <c:if test="${t.date eq d}">
+                                       ${t.status}
+                                   </c:if>
                         </c:forEach>
+                            
+                        </th>
+                    </c:forEach>
+                        
                 </tr>
             </c:forEach>
 
+                
             <tr>
                 <th>2</th>
                 <th>Nguyễn Quang Hòa</th>

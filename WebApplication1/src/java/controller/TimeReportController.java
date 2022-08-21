@@ -64,13 +64,14 @@ public class TimeReportController extends HttpServlet {
         
         EmpDBContext db2 = new EmpDBContext();
         ArrayList<Emp> employees = db2.getAllEmp();
-        HttpSession session = request.getSession();
-        session.setAttribute("emp", employees);
+//        HttpSession session = request.getSession();
+//        session.setAttribute("emp", employees);
+            request.setAttribute("emp", employees);
         
         TimeSheetDBContext db = new TimeSheetDBContext();
-        List<Timesheet> timesheets = db.getTimeSheet(1, dayOfMonth);
-        HttpSession session2 = request.getSession();
-        session2.setAttribute("time", timesheets);        
+        List<Timesheet> timesheets = db.getTimeSheet(1, 8);
+        HttpSession session = request.getSession();
+        session.setAttribute("time", timesheets);        
         
         request.getRequestDispatcher("report2.jsp").forward(request, response);
         
