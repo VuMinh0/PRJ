@@ -5,6 +5,7 @@
 package controller;
 
 import dal.EmpDBContext;
+import dal.LeaveDBContext;
 import dal.TimeSheetDBContext;
 import helper.DateTimeHelper;
 import java.io.IOException;
@@ -21,6 +22,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Emp;
+import model.Leave;
 import model.Salary;
 import model.Timesheet;
 
@@ -72,6 +74,10 @@ public class TimeReportController extends HttpServlet {
 //        HttpSession session = request.getSession();
 //        session.setAttribute("emp", employees);
 request.setAttribute("emp", employees);
+
+            LeaveDBContext db3 = new LeaveDBContext();
+            ArrayList<Leave> leaves = db3.getAllLeave();
+            request.setAttribute("lea", leaves);
 
 TimeSheetDBContext db = new TimeSheetDBContext();
 List<Timesheet> timesheets = db.getTimeSheet(8);

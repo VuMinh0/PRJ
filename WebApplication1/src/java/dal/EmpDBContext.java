@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Emp;
+import model.Leave;
 import model.Salary;
 import model.Timesheet;
 
@@ -59,6 +60,8 @@ public class EmpDBContext extends DBContext {
 
         return emp;
     }
+    
+
 
  
 

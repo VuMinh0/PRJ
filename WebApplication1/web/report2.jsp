@@ -109,9 +109,11 @@
                     </c:forEach>
                 </table>
             </div>
-
+            <br>
+            <br>
+            <br>
             <div class="right">
-                <table style="width:20">
+                <table style="width:30">
                     <tr>
                         <th>Tổng Cộng Ngày Làm</th>
                         <th>Vắng Mặt</th>
@@ -144,7 +146,7 @@
                                         <c:if test="${s1.salary ne null }">
                                             ${s1.salary * t2.status  + s1.salary/2 * t16.status}
                                         </c:if>
-                                    </td>
+                                    </td> 
                                 </c:forEach>
                             </c:forEach>
                         </c:forEach>        
@@ -639,42 +641,28 @@
 
 
 
-        <h1>Danh Sách Trả Công Cuối Tháng</h1>
+        <h1>Danh Sách Những Người Nghỉ Có Lý Do Khác</h1>
+        <table style="width:100%">
+            <tr></tr>
+            <th>TT</th>
+            <th>Tên Nhân Viên</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Lý Do</th>
+            <th>From</th>
+            <tr>Ðã Xác Thực</tr>
+            <c:forEach items="${requestScope.lea}" var="l">
+                        <tr>
+                            <th>${l.lid}</th>
+                            <th>${l.eid}</th>
+                            <th>${l.from}</th>
+                            <th>${l.to}</th>     
+                            <th>${l.reason}</th>     
+                            <th>${l.check}</th>
+                        </tr>
 
-
-
-        <!--<table style="width:100%">
-          <tr>
-            <th>TT</th> 
-            <th>Name</th>
-            <th>Chuc vu</th> 
-            <th>Salary</th>
-            <th>Tình Trạng</th>
-        
-          </tr>
-          <tr>
-              <td>1</td>
-            <td>Vu Thi Thu Ha</td>
-            <td>P.Giam Doc</td>
-            <td>200k</td>
-            <td>Chưa Nhận</td>
-        
-          </tr>
-          <tr>
-              <td>2</td>
-            <td>Nguyen Thai Ha</td>
-            <td>Thu ky</td>
-            <td>250k</td>
-            <td>Đã Nhận</td>
-          </tr>
-          <tr>
-              <td>3</td>
-            <td>Nguyen Thai Ha</td>
-            <td>Thu ky</td>
-            <td>100k</td>
-            <td>Chưa Nhận</td>
-          </tr>
-        </table>-->
+                    </c:forEach>
+        </table>
 
 
     </body>

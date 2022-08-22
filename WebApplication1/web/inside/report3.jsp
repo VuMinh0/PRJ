@@ -78,39 +78,6 @@
         </table>
 
 
-        <c:forEach items="${requestScope.emp}" var="e">
-        <tr>
-            <th>${e.eid}</th>
-            <th>${e.name}</th>
-            <th>${e.chucvu}</th>
-                <c:forEach items="${requestScope.dates}" var="d">
-                <th 
-                    <c:if test="${ dt.getDayOfWeek(d) eq 7}">
-                        style="background-color: #f2f2c0;"
-                    </c:if>
-                    >
 
-
-                    <c:forEach items="${sessionScope.time}" var="t">
-                        <c:if test="${t.date eq d && e.eid eq t.tid}">
-                            ${t.status}
-                        </c:if>
-                    </c:forEach>
-
-                </th>
-            </c:forEach>
-            <c:forEach items="${requestScope.time2}" var="t2">
-                <th> 
-                    <c:if test="${t2.status ne null }">
-                        ${t2.status}
-                    </c:if>
-                </th>
-            </c:forEach>
-            <th></th>     
-            <th></th>     
-
-        </tr>
-
-    </c:forEach>
 </body>
 </html>
