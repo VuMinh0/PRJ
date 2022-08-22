@@ -58,12 +58,14 @@ public class EmpDBContext extends DBContext {
 
         return emp;
     }
-    
-        public static void main(String[] args) {
-            EmpDBContext ts = new EmpDBContext();
-         ArrayList<Emp> emp = ts.getAllEmp();
-         for (Emp ee : emp) {
-             System.out.println(ee.getEid());
+
+
+
+    public static void main(String[] args) {
+        EmpDBContext ts = new EmpDBContext();
+        ArrayList<Emp> emp = ts.getAllEmp();
+        for (Emp ee : emp) {
+            System.out.println(ee.getEid());
         }
-        }
+    }
 }

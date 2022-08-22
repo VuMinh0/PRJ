@@ -14,9 +14,12 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.Emp;
 import model.Timesheet;
 
@@ -52,28 +55,35 @@ public class TimeReportController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Date today = new Date();
-        today = DateTimeHelper.removeTime(today);
-        int dayOfMonth = DateTimeHelper.getDayOfMonth(today);
-        Date begin = DateTimeHelper.addDays(today, -1 * (dayOfMonth - 1));
-        Date end = DateTimeHelper.addDays(DateTimeHelper.addMonths(begin, 1), -1);
-        ArrayList<Date> dates = DateTimeHelper.getDates(begin, end);
-
-        request.setAttribute("dates", dates);
-        request.setAttribute("dates", dates);
-
-        EmpDBContext db2 = new EmpDBContext();
-        ArrayList<Emp> employees = db2.getAllEmp();
+        try {
+            Date today = new Date();
+            today = DateTimeHelper.removeTime(today);
+            int dayOfMonth = DateTimeHelper.getDayOfMonth(today);
+            Date begin = DateTimeHelper.addDays(today, -1 * (dayOfMonth - 1));
+            Date end = DateTimeHelper.addDays(DateTimeHelper.addMonths(begin, 1), -1);
+            ArrayList<Date> dates = DateTimeHelper.getDates(begin, end);
+            
+            request.setAttribute("dates", dates);
+            request.setAttribute("dates", dates);
+            
+            EmpDBContext db2 = new EmpDBContext();
+            ArrayList<Emp> employees = db2.getAllEmp();
 //        HttpSession session = request.getSession();
 //        session.setAttribute("emp", employees);
-        request.setAttribute("emp", employees);
+request.setAttribute("emp", employees);
 
-        TimeSheetDBContext db = new TimeSheetDBContext();
-        List<Timesheet> timesheets = db.getTimeSheet(1, 8);
-        HttpSession session = request.getSession();
-        session.setAttribute("time", timesheets);
+TimeSheetDBContext db = new TimeSheetDBContext();
+List<Timesheet> timesheets = db.getTimeSheet(8);
+HttpSession session = request.getSession();
+session.setAttribute("time", timesheets);
 
-        request.getRequestDispatcher("report2.jsp").forward(request, response);
+List<Timesheet> timesheets2 = db.getTotalWorkingById("Y", 1);
+request.setAttribute("time2", timesheets2);
+
+request.getRequestDispatcher("report2.jsp").forward(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(TimeReportController.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 

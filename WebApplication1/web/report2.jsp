@@ -76,34 +76,37 @@
                     <th>${e.eid}</th>
                     <th>${e.name}</th>
                     <th>${e.chucvu}</th>
-                     <c:forEach items="${requestScope.dates}" var="d">
+                        <c:forEach items="${requestScope.dates}" var="d">
                         <th 
                             <c:if test="${ dt.getDayOfWeek(d) eq 7}">
                                 style="background-color: #f2f2c0;"
                             </c:if>
                             >
 
-                            
-                               <c:forEach items="${sessionScope.time}" var="t">
-                                   <c:if test="${t.date eq d && e.eid eq t.tid}">
-                                       ${t.status}
-                                   </c:if>
-                        </c:forEach>
-                            
+
+                            <c:forEach items="${sessionScope.time}" var="t">
+                                <c:if test="${t.date eq d && e.eid eq t.tid}">
+                                    ${t.status}
+                                </c:if>
+                            </c:forEach>
+
                         </th>
                     </c:forEach>
-                    <c:if test="${t.status == Y}">
-                       <th> ${t.status}</th>
-                    </c:if>
-                           
-                        <th></th>     
-                        <th></th>     
+                    <c:forEach items="${requestScope.time2}" var="t2">
+                        <th> 
+                            <c:if test="${t2.status ne null }">
+                                ${t2.status}
+                            </c:if>
+                        </th>
+                    </c:forEach>
+                    <th></th>     
+                    <th></th>     
 
                 </tr>
-                
+
             </c:forEach>
-                
-                
+
+
 
         </table>
         <br>
@@ -203,6 +206,8 @@
 
         <!--    <a href="#" id="nutnhan1">TÍNH SỐ NGÀY CÔNG</a>
             <a href="#" id="nutnhan2">TÍNH TIỀN LƯƠNG</a>-->
+
+
 
 
 
