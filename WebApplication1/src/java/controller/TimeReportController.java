@@ -58,23 +58,23 @@ public class TimeReportController extends HttpServlet {
         Date begin = DateTimeHelper.addDays(today, -1 * (dayOfMonth - 1));
         Date end = DateTimeHelper.addDays(DateTimeHelper.addMonths(begin, 1), -1);
         ArrayList<Date> dates = DateTimeHelper.getDates(begin, end);
-        
+
         request.setAttribute("dates", dates);
         request.setAttribute("dates", dates);
-        
+
         EmpDBContext db2 = new EmpDBContext();
         ArrayList<Emp> employees = db2.getAllEmp();
 //        HttpSession session = request.getSession();
 //        session.setAttribute("emp", employees);
-            request.setAttribute("emp", employees);
-        
+        request.setAttribute("emp", employees);
+
         TimeSheetDBContext db = new TimeSheetDBContext();
         List<Timesheet> timesheets = db.getTimeSheet(1, 8);
         HttpSession session = request.getSession();
-        session.setAttribute("time", timesheets);        
-        
+        session.setAttribute("time", timesheets);
+
         request.getRequestDispatcher("report2.jsp").forward(request, response);
-        
+
     }
 
     /**

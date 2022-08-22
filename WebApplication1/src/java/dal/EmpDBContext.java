@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Emp;
@@ -57,4 +58,12 @@ public class EmpDBContext extends DBContext {
 
         return emp;
     }
+    
+        public static void main(String[] args) {
+            EmpDBContext ts = new EmpDBContext();
+         ArrayList<Emp> emp = ts.getAllEmp();
+         for (Emp ee : emp) {
+             System.out.println(ee.getEid());
+        }
+        }
 }

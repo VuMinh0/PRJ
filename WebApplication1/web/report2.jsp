@@ -93,7 +93,7 @@
                         </th>
                     </c:forEach>
                     <c:if test="${t.status == Y}">
-                        <th>p</th> 
+                       <th> ${t.status}</th>
                     </c:if>
                            
                         <th></th>     
