@@ -77,7 +77,7 @@ List<Timesheet> timesheets = db.getTimeSheet(8);
 HttpSession session = request.getSession();
 session.setAttribute("time", timesheets);
 
-List<Timesheet> timesheets2 = db.getTotalWorkingById("Y", 1);
+List<Timesheet> timesheets2 = db.getTotalWorkingById(1);
 request.setAttribute("time2", timesheets2);
 
 request.getRequestDispatcher("report2.jsp").forward(request, response);

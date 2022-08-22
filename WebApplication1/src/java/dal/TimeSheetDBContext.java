@@ -45,7 +45,8 @@ public class TimeSheetDBContext extends DBContext {
         return null;
     }
 
-    public Timesheet getTotalWorkingById(int eid) throws SQLException {
+    public List<Timesheet> getTotalWorkingById(int eid) throws SQLException {
+        List<Timesheet> timesheet = new ArrayList<>();
         try {
             String sql = "select COUNT(Timesheet3.status) as status\n"
                     + "from Timesheet3\n"
@@ -56,9 +57,9 @@ public class TimeSheetDBContext extends DBContext {
             while (rs.next()) {
                 Timesheet t = new Timesheet();
                 t.setStatus(rs.getString("status"));
-                t.setEid(rs.getInt("eid"));
-                return t;
+                timesheet.add(t);
             }
+            return timesheet;
         } catch (SQLException ex) {
             Logger.getLogger(EmpDBContext.class.getName()).log(Level.SEVERE, null, ex);
 
@@ -66,31 +67,11 @@ public class TimeSheetDBContext extends DBContext {
         return null;
     }
 
-    
-       public List<Timesheet> getAllTotalWorkingById(int month) {
-        ArrayList<Emp> emp = new ArrayList<>();
-        try {
-            String sql = "SELECT * FROM Emp3";
-            PreparedStatement stm = connection.prepareStatement(sql);
-            ResultSet rs = stm.executeQuery();
-            while (rs.next()) {
-                emp.add(getEmpById(rs.getInt("eid")));
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(EmpDBContext.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        return emp;
-    }
-    
-    
-    
-    
     public static void main(String[] args) {
         try {
             TimeSheetDBContext ts = new TimeSheetDBContext();
-            
-            for (Timesheet timesheet1 : ) {
+            List<Timesheet> timesheet = ts.getTotalWorkingById(2);
+            for (Timesheet timesheet1 : timesheet) {
                 System.out.println(timesheet1.getStatus());
             }
         } catch (SQLException ex) {
