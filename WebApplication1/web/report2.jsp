@@ -202,7 +202,7 @@
             </div>
 
             <div>
-                <button class="button button1"><a href="inside/index2.html">Check</a></button>
+                <button class="button button1"><a href="inside/report3.jsp">Check</a></button>
             </div>
 
         </div>
@@ -212,6 +212,43 @@
 
 
 
+
+        <h1>Danh Sách Trả Công Cuối Tháng</h1>
+
+
+
+<!--<table style="width:100%">
+  <tr>
+    <th>TT</th> 
+    <th>Name</th>
+    <th>Chuc vu</th> 
+    <th>Salary</th>
+    <th>Tình Trạng</th>
+
+  </tr>
+  <tr>
+      <td>1</td>
+    <td>Vu Thi Thu Ha</td>
+    <td>P.Giam Doc</td>
+    <td>200k</td>
+    <td>Chưa Nhận</td>
+
+  </tr>
+  <tr>
+      <td>2</td>
+    <td>Nguyen Thai Ha</td>
+    <td>Thu ky</td>
+    <td>250k</td>
+    <td>Đã Nhận</td>
+  </tr>
+  <tr>
+      <td>3</td>
+    <td>Nguyen Thai Ha</td>
+    <td>Thu ky</td>
+    <td>100k</td>
+    <td>Chưa Nhận</td>
+  </tr>
+</table>-->
 
 
     </body>

@@ -1,0 +1,51 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Aug 23, 2022, 2:01:34 AM
+    Author     : dttnb
+*/
+
+td{
+    text-align: center;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  
+}
+
+tr:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+  
+}
+
+th:nth-child(even),td:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+    
+
+}
+
+.continer{
+        background-image: url('https://wallpapercave.com/wp/wp8552399.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;
+}
+
+#table2{
+    width: 500px;
+    justify-content: right;
+}
+
+h2{
+    width: 500px;
+    text-align: center;
+}
+
+#kyten{
+    text-align: center;
+    padding-left: 1000px;
+}
