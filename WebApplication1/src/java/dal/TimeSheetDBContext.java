@@ -66,11 +66,33 @@ public class TimeSheetDBContext extends DBContext {
         }
         return null;
     }
+    
+        public List<Timesheet> getTotalWorkingById2(int eid) throws SQLException {
+        List<Timesheet> timesheet = new ArrayList<>();
+        try {
+            String sql = "select COUNT(Timesheet3.status) as status\n"
+                    + "from Timesheet3\n"
+                    + "where Timesheet3.status = 'NN' AND Timesheet3.eid = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, eid);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Timesheet t = new Timesheet();
+                t.setStatus(rs.getString("status"));
+                timesheet.add(t);
+            }
+            return timesheet;
+        } catch (SQLException ex) {
+            Logger.getLogger(EmpDBContext.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+        return null;
+    }
 
     public static void main(String[] args) {
         try {
             TimeSheetDBContext ts = new TimeSheetDBContext();
-            List<Timesheet> timesheet = ts.getTotalWorkingById(2);
+            List<Timesheet> timesheet = ts.getTotalWorkingById2(1);
             for (Timesheet timesheet1 : timesheet) {
                 System.out.println(timesheet1.getStatus());
             }
