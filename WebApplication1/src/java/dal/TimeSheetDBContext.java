@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Emp;
+import model.Salary;
 import model.Timesheet;
 
 /**
@@ -88,17 +89,41 @@ public class TimeSheetDBContext extends DBContext {
         }
         return null;
     }
+        
+           public List<Salary> getAllSalary(int eid)throws SQLException {
+        List<Salary> salary = new ArrayList<>();
+        try {
+            String sql = "select e.eid, e.ename, s.chucvu, s.salary  from Emp3 e, Salary3 s where\n" +
+                    "e.chucvu = s.chucvu and eid = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, eid);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Salary s = new Salary();
+                s.setChucvu(rs.getString("chucvu"));
+                s.setSalary(rs.getFloat("salary"));
+                salary.add(s);
+            }
+            return salary;
+        } catch (SQLException ex) {
+            Logger.getLogger(EmpDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return null;
+    }
 
     public static void main(String[] args) {
         try {
             TimeSheetDBContext ts = new TimeSheetDBContext();
-            List<Timesheet> timesheet = ts.getTotalWorkingById2(1);
-            for (Timesheet timesheet1 : timesheet) {
-                System.out.println(timesheet1.getStatus());
+            List<Salary> salary = ts.getAllSalary(1);
+            for (Salary salary1 : salary) {
+                System.out.println(salary1.getSalary());
             }
         } catch (SQLException ex) {
             Logger.getLogger(TimeSheetDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
+    
+    
 }

@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Emp;
+import model.Salary;
 import model.Timesheet;
 
 /**
@@ -129,11 +130,40 @@ request.setAttribute("time25", timesheets25);
 List<Timesheet> timesheets26 = db.getTotalWorkingById2(11);
 request.setAttribute("time26", timesheets26);
 List<Timesheet> timesheets27 = db.getTotalWorkingById2(12);
-request.setAttribute("time27", timesheets17);
+request.setAttribute("time27", timesheets27);
 List<Timesheet> timesheets28 = db.getTotalWorkingById2(13);
 request.setAttribute("time28", timesheets28);
 List<Timesheet> timesheets29 = db.getTotalWorkingById2(14);
 request.setAttribute("time29", timesheets29);
+
+List<Salary> salary1 = db.getAllSalary(1);
+request.setAttribute("salary1", salary1);
+List<Salary> salary2 = db.getAllSalary(2);
+request.setAttribute("salary2", salary2);
+List<Salary> salary3 = db.getAllSalary(3);
+request.setAttribute("salary3", salary3);
+List<Salary> salary4 = db.getAllSalary(4);
+request.setAttribute("salary4", salary4);
+List<Salary> salary5 = db.getAllSalary(5);
+request.setAttribute("salary5", salary5);
+List<Salary> salary6 = db.getAllSalary(6);
+request.setAttribute("salary6", salary6);
+List<Salary> salary7 = db.getAllSalary(7);
+request.setAttribute("salary7", salary7);
+List<Salary> salary8 = db.getAllSalary(8);
+request.setAttribute("salary8", salary8);
+List<Salary> salary9 = db.getAllSalary(9);
+request.setAttribute("salary9", salary9);
+List<Salary> salary10 = db.getAllSalary(10);
+request.setAttribute("salary10", salary10);
+List<Salary> salary11 = db.getAllSalary(11);
+request.setAttribute("salary11", salary11);
+List<Salary> salary12 = db.getAllSalary(12);
+request.setAttribute("salary12", salary12);
+List<Salary> salary13 = db.getAllSalary(13);
+request.setAttribute("salary13", salary13);
+List<Salary> salary14 = db.getAllSalary(14);
+request.setAttribute("salary14", salary14);
 
 request.getRequestDispatcher("report2.jsp").forward(request, response);
         } catch (SQLException ex) {

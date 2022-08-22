@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Emp;
+import model.Salary;
 import model.Timesheet;
 
 /**
@@ -59,13 +60,15 @@ public class EmpDBContext extends DBContext {
         return emp;
     }
 
+ 
 
+//    public static void main(String[] args) {
+//        EmpDBContext ts = new EmpDBContext();
+//        ArrayList<Emp> emp = ts.getAllEmp();
+//        for (Emp ee : emp) {
+//            System.out.println(ee.getEid());
+//        }
+//    }
+    
 
-    public static void main(String[] args) {
-        EmpDBContext ts = new EmpDBContext();
-        ArrayList<Emp> emp = ts.getAllEmp();
-        for (Emp ee : emp) {
-            System.out.println(ee.getEid());
-        }
-    }
 }
