@@ -266,7 +266,6 @@
                                 </c:forEach>
                             </c:forEach>
                         </c:forEach>     
-
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time7}" var="t7">
@@ -285,7 +284,17 @@
                                 </c:if>
                             </td>
                         </c:forEach>           
-
+                        <c:forEach items="${requestScope.salary6}" var="s6">
+                            <c:forEach items="${requestScope.time7}" var="t7">
+                                <c:forEach items="${requestScope.time21}" var="t21">
+                                    <td> 
+                                        <c:if test="${s6.salary ne null }">
+                                            ${s6.salary * t7.status + s6.salary/2 * t21.status}
+                                        </c:if>
+                                    </td>
+                                </c:forEach>
+                            </c:forEach>
+                        </c:forEach>    
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time8}" var="t8">
@@ -303,7 +312,18 @@
                                     ${t22.status}
                                 </c:if>
                             </td>
-                        </c:forEach>   
+                        </c:forEach> 
+                        <c:forEach items="${requestScope.salary7}" var="s7">
+                            <c:forEach items="${requestScope.time8}" var="t8">
+                                <c:forEach items="${requestScope.time22}" var="t22">
+                                    <td> 
+                                        <c:if test="${s7.salary ne null }">
+                                            ${s7.salary * t8.status + s7.salary/2 * t22.status}
+                                        </c:if>
+                                    </td>
+                                </c:forEach>
+                            </c:forEach>
+                        </c:forEach>    
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time9}" var="t9">
@@ -321,6 +341,17 @@
                                     ${t23.status}
                                 </c:if>
                             </td>
+                        </c:forEach>
+                        <c:forEach items="${requestScope.salary8}" var="s8">
+                            <c:forEach items="${requestScope.time9}" var="t9">
+                                <c:forEach items="${requestScope.time23}" var="t23">
+                                    <td> 
+                                        <c:if test="${s8.salary ne null }">
+                                            ${s8.salary * t9.status + s8.salary/2 * t23.status}
+                                        </c:if>
+                                    </td>
+                                </c:forEach>
+                            </c:forEach>
                         </c:forEach>    
                     </tr>
                     <tr>
@@ -339,7 +370,18 @@
                                     ${t24.status}
                                 </c:if>
                             </td>
-                        </c:forEach>   
+                        </c:forEach>
+                        <c:forEach items="${requestScope.salary9}" var="s9">
+                            <c:forEach items="${requestScope.time10}" var="t10">
+                                <c:forEach items="${requestScope.time24}" var="t24">
+                                    <td> 
+                                        <c:if test="${s9.salary ne null }">
+                                            ${s9.salary * t10.status + s9.salary/2 * t24.status}
+                                        </c:if>
+                                    </td>
+                                </c:forEach>
+                            </c:forEach>
+                        </c:forEach>    
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time11}" var="t11">
@@ -357,7 +399,18 @@
                                     ${t25.status}
                                 </c:if>
                             </td>
-                        </c:forEach>   
+                        </c:forEach>
+                        <c:forEach items="${requestScope.salary10}" var="s10">
+                            <c:forEach items="${requestScope.time11}" var="t11">
+                                <c:forEach items="${requestScope.time25}" var="t25">
+                                    <td> 
+                                        <c:if test="${s10.salary ne null }">
+                                            ${s10.salary * t11.status + s10.salary/2 * t25.status}
+                                        </c:if>
+                                    </td>
+                                </c:forEach>
+                            </c:forEach>
+                        </c:forEach>    
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time12}" var="t12">
@@ -375,7 +428,18 @@
                                     ${t26.status}
                                 </c:if>
                             </td>
-                        </c:forEach>   
+                        </c:forEach>
+                        <c:forEach items="${requestScope.salary11}" var="s11">
+                            <c:forEach items="${requestScope.time12}" var="t12">
+                                <c:forEach items="${requestScope.time26}" var="t26">
+                                    <td> 
+                                        <c:if test="${s11.salary ne null }">
+                                            ${s11.salary * t12.status + s11.salary/2 * t26.status}
+                                        </c:if>
+                                    </td>
+                                </c:forEach>
+                            </c:forEach>
+                        </c:forEach>    
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time13}" var="t13">
@@ -393,7 +457,18 @@
                                     ${t27.status}
                                 </c:if>
                             </td>
-                        </c:forEach>   
+                        </c:forEach>
+                        <c:forEach items="${requestScope.salary12}" var="s12">
+                            <c:forEach items="${requestScope.time13}" var="t13">
+                                <c:forEach items="${requestScope.time27}" var="t27">
+                                    <td> 
+                                        <c:if test="${s12.salary ne null }">
+                                            ${s12.salary * t13.status + s12.salary/2 * t27.status}
+                                        </c:if>
+                                    </td>
+                                </c:forEach>
+                            </c:forEach>
+                        </c:forEach>     
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time14}" var="t14">
@@ -411,7 +486,18 @@
                                     ${t28.status}
                                 </c:if>
                             </td>
-                        </c:forEach>   
+                        </c:forEach>
+                        <c:forEach items="${requestScope.salary13}" var="s13">
+                            <c:forEach items="${requestScope.time14}" var="t14">
+                                <c:forEach items="${requestScope.time28}" var="t28">
+                                    <td> 
+                                        <c:if test="${s13.salary ne null }">
+                                            ${s13.salary * t14.status + s13.salary/2 * t28.status}
+                                        </c:if>
+                                    </td>
+                                </c:forEach>
+                            </c:forEach>
+                        </c:forEach>    
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time15}" var="t15">
@@ -429,7 +515,18 @@
                                     ${t29.status}
                                 </c:if>
                             </td>
-                        </c:forEach>   
+                        </c:forEach>
+                        <c:forEach items="${requestScope.salary14}" var="s14">
+                            <c:forEach items="${requestScope.time15}" var="t15">
+                                <c:forEach items="${requestScope.time29}" var="t29">
+                                    <td> 
+                                        <c:if test="${s14.salary ne null }">
+                                            ${s14.salary * t15.status + s14.salary/2 * t29.status}
+                                        </c:if>
+                                    </td>
+                                </c:forEach>
+                            </c:forEach>
+                        </c:forEach>    
                     </tr>
                 </table>
             </div>
