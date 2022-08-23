@@ -681,28 +681,28 @@
 
 
 
-        <h1>Danh Sách Những Người Nghỉ Có Lý Do Khác</h1>
-        <table style="width:100%">
-            <tr></tr>
-            <th>Số Nhân Viên</th>
-            <th>Tên Nhân Viên</th>
-            <th>From</th>
-            <th>To</th>
-            <th>Lý Do</th>
-            <th>Ðã Xác Thực</th>
-            <tr></tr>
-            <c:forEach items="${requestScope.lea}" var="l">
-                <tr>
-                    <th>${l.lid}</th>
-                    <th>${l.eid}</th>
-                    <th>${l.from}</th>
-                    <th>${l.to}</th>     
-                    <th>${l.reason}</th>     
-                    <th>${l.check}</th>
-                </tr>
+        <!--        <h1>Danh Sách Những Người Nghỉ Có Lý Do Khác</h1>
+                <table style="width:100%">
+                    <tr></tr>
+                    <th>Số Nhân Viên</th>
+                    <th>Tên Nhân Viên</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Lý Do</th>
+                    <th>Ðã Xác Thực</th>
+                    <tr></tr>
+        <c:forEach items="${requestScope.lea}" var="l">
+            <tr>
+                <th>${l.lid}</th>
+                <th>${l.eid}</th>
+                <th>${l.from}</th>
+                <th>${l.to}</th>     
+                <th>${l.reason}</th>     
+                <th>${l.check}</th>
+            </tr>
 
-            </c:forEach>
-        </table>
+        </c:forEach>
+    </table>-->
 
 
     </body>
