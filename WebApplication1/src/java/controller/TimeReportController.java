@@ -84,6 +84,9 @@ List<Timesheet> timesheets = db.getTimeSheet(8);
 HttpSession session = request.getSession();
 session.setAttribute("time", timesheets);
 
+List<Timesheet> timesheets50 = db.getTotalWorkingById3();
+request.setAttribute("time50", timesheets50);
+
 List<Timesheet> timesheets2 = db.getTotalWorkingById(1);
 request.setAttribute("time2", timesheets2);
 List<Timesheet> timesheets3 = db.getTotalWorkingById(2);

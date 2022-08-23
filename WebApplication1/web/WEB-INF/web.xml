@@ -8,6 +8,10 @@
         <servlet-name>TimeReportController</servlet-name>
         <servlet-class>controller.TimeReportController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LeaveController</servlet-name>
+        <servlet-class>controller.LeaveController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>TimeSheetReportController</servlet-name>
         <url-pattern>/report</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>TimeReportController</servlet-name>
         <url-pattern>/report2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LeaveController</servlet-name>
+        <url-pattern>/report3</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

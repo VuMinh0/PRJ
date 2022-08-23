@@ -29,100 +29,107 @@
         <h3>
             <b >THÁNG 01/2021</b>
         </h3>
-        <div class="new">
-            <div class="left">
-                <table border="1" width="1900px" height="150px">
-                    <tr></tr>
-                    <th rowspan="5">TT</th>
-                    <th rowspan="5">Họ Tên</th>
-                    <th rowspan="5">Chức Vụ</th>
-                    <th colspan="31">Ngày trong tháng, thứ trong tuần</th>
-                    <th rowspan="5">Tổng Cộng</th>
-                    <th rowspan="4" colspan="3">Ngày Nghỉ</th>
 
-                    <tr></tr>
-                    <c:forEach items="${requestScope.dates}" var="d">
-                        <th
+        <table border="1" width="1900px" height="150px">
+            <tr></tr>
+            <th rowspan="5">TT</th>
+            <th rowspan="5">Họ Tên</th>
+            <th rowspan="5">Chức Vụ</th>
+            <th colspan="31">Ngày trong tháng, thứ trong tuần</th>
+            <!--                    <th rowspan="5">Tổng Cộng</th>-->
+            <!--                    <th rowspan="4" colspan="3">Ngày Nghỉ</th>-->
+
+            <tr></tr>
+            <c:forEach items="${requestScope.dates}" var="d">
+                <th
+                    <c:if test="${ dt.getDayOfWeek(d) eq 7}">
+                        style="background-color: #f2f2c0;"
+                    </c:if>
+                    >
+
+                    <fmt:formatDate pattern = "dd" 
+                                    value = "${d}" /> <br/>
+
+                </th>
+            </c:forEach>
+
+            <tr></tr>
+            <c:forEach items="${requestScope.dates}" var="d">
+                <th
+                    <c:if test="${ dt.getDayOfWeek(d) eq 7 }">
+                        style="background-color: #f2f2c0;"
+                    </c:if>
+                    >
+
+                    <fmt:formatDate pattern = "EEE" 
+                                    value = "${d}" />
+                </th>
+            </c:forEach>
+
+            <!--                    <th>Vắng mặt</th>
+                                <th>Nghỉ Lễ</th>            -->
+            <tr></tr>
+
+
+
+            <c:forEach items="${requestScope.emp}" var="e">
+                <tr>
+                    <th>${e.eid}</th>
+                    <th>${e.name}</th>
+                    <th>${e.chucvu}</th>
+                        <c:forEach items="${requestScope.dates}" var="d">
+                        <th 
                             <c:if test="${ dt.getDayOfWeek(d) eq 7}">
                                 style="background-color: #f2f2c0;"
                             </c:if>
                             >
 
-                            <fmt:formatDate pattern = "dd" 
-                                            value = "${d}" /> <br/>
+
+                            <c:forEach items="${sessionScope.time}" var="t">
+                                <c:if test="${t.date eq d && e.eid eq t.tid}">
+                                    ${t.status}
+                                </c:if>
+                            </c:forEach>
 
                         </th>
                     </c:forEach>
 
-                    <tr></tr>
-                    <c:forEach items="${requestScope.dates}" var="d">
-                        <th
-                            <c:if test="${ dt.getDayOfWeek(d) eq 7 }">
-                                style="background-color: #f2f2c0;"
-                            </c:if>
-                            >
-
-                            <fmt:formatDate pattern = "EEE" 
-                                            value = "${d}" />
-                        </th>
+                    <!--                                <th> <c:forEach items="${requestScope.time50}" var="t50">
+                        <c:if test="${t50.status eq e.eid}">
+                            ${t50.status}
+                        </c:if>
                     </c:forEach>
+                </th>
+            
+            <th></th>     
+            <th></th>     -->
 
-                    <th>Vắng mặt</th>
-                    <th>Nghỉ Lễ</th>            
-                    <tr></tr>
+                </tr>
 
+            </c:forEach>
+        </table>
 
-
-                    <c:forEach items="${requestScope.emp}" var="e">
-                        <tr>
-                            <th>${e.eid}</th>
-                            <th>${e.name}</th>
-                            <th>${e.chucvu}</th>
-                                <c:forEach items="${requestScope.dates}" var="d">
-                                <th 
-                                    <c:if test="${ dt.getDayOfWeek(d) eq 7}">
-                                        style="background-color: #f2f2c0;"
-                                    </c:if>
-                                    >
-
-
-                                    <c:forEach items="${sessionScope.time}" var="t">
-                                        <c:if test="${t.date eq d && e.eid eq t.tid}">
-                                            ${t.status}
-                                        </c:if>
-                                    </c:forEach>
-
-                                </th>
-                            </c:forEach>
-                            <c:forEach items="${requestScope.time2}" var="t2">
-                                <th> 
-                                    <c:if test="${t2.status ne null }">
-                                        ${t2.status}
-                                    </c:if>
-                                </th>
-                            </c:forEach>
-                            <th></th>     
-                            <th></th>     
-
-                        </tr>
-
-                    </c:forEach>
-                </table>
-            </div>
-            <br>
-            <br>
-            <br>
-            <div class="right">
-                <table style="width:30">
+        <br>
+        <br>
+        <br>
+        <div id="new0" class=" new">
+            <div id="post">
+                <table style="width:100">
                     <tr>
+                        <th>Số Nhân Viên</th>
+                        <th>Họ Tên</th>
                         <th>Tổng Cộng Ngày Làm</th>
                         <th>Vắng Mặt</th>
                         <th>Nghỉ lễ</th>
                         <th>Tổng Số Nửa Ngày Làm</th>
                         <th>Tổng số lương nhận được</th>
                     </tr>
+
                     <tr>
+
                         <c:forEach items="${requestScope.time2}" var="t2">
+                            <td>1</td>
+                            <td>Vũ Thị Thu Hà</td>
                             <td> 
                                 <c:if test="${t2.status ne null }">
                                     ${t2.status}
@@ -154,6 +161,8 @@
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time3}" var="t3">
+                            <td>2</td>
+                            <td>Nguyễn Thái Hà</td>
                             <td> 
                                 <c:if test="${t3.status ne null }">
                                     ${t3.status}
@@ -184,6 +193,8 @@
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time4}" var="t4">
+                            <td>3</td>
+                            <td>Trần Thị Hương</td>
                             <td> 
                                 <c:if test="${t4.status ne null }">
                                     ${t4.status}
@@ -213,6 +224,8 @@
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time5}" var="t5">
+                            <td>4</td>
+                            <td>Lê Thị Ngọc Minh</td>
                             <td> 
                                 <c:if test="${t5.status ne null }">
                                     ${t5.status}
@@ -242,6 +255,8 @@
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time6}" var="t6">
+                            <td>5</td>
+                            <td>Nguyễn Thị Ngọc Anh</td>
                             <td> 
                                 <c:if test="${t6.status ne null }">
                                     ${t6.status}
@@ -271,6 +286,8 @@
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time7}" var="t7">
+                            <td>6</td>
+                            <td>Bùi Ngọc Tân</td>
                             <td> 
                                 <c:if test="${t7.status ne null }">
                                     ${t7.status}
@@ -300,6 +317,8 @@
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time8}" var="t8">
+                            <td>7</td>
+                            <td>Đinh văn Tiến</td>
                             <td> 
                                 <c:if test="${t8.status ne null }">
                                     ${t8.status}
@@ -329,6 +348,8 @@
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time9}" var="t9">
+                            <td>8</td>
+                            <td>Nguyễn Văn Hậu</td>
                             <td> 
                                 <c:if test="${t9.status ne null }">
                                     ${t9.status}
@@ -358,6 +379,8 @@
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time10}" var="t10">
+                            <td>9</td>
+                            <td>Lê Đặng Linh</td>
                             <td> 
                                 <c:if test="${t10.status ne null }">
                                     ${t10.status}
@@ -387,6 +410,8 @@
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time11}" var="t11">
+                            <td>10</td>
+                            <td>Hoàng Bảo Việt</td>
                             <td> 
                                 <c:if test="${t11.status ne null }">
                                     ${t11.status}
@@ -416,6 +441,8 @@
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time12}" var="t12">
+                            <td>11</td>
+                            <td>Nguyễn Quang Hải</td>
                             <td> 
                                 <c:if test="${t12.status ne null }">
                                     ${t12.status}
@@ -445,6 +472,8 @@
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time13}" var="t13">
+                            <td>12</td>
+                            <td>Đặng Nam Sơn</td>
                             <td> 
                                 <c:if test="${t13.status ne null }">
                                     ${t13.status}
@@ -474,6 +503,8 @@
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time14}" var="t14">
+                            <td>13</td>
+                            <td>Võ Thanh Hải</td>
                             <td> 
                                 <c:if test="${t14.status ne null }">
                                     ${t14.status}
@@ -503,6 +534,8 @@
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.time15}" var="t15">
+                            <td>14</td>
+                            <td>Nguyễn Thị Hồng</td>
                             <td> 
                                 <c:if test="${t15.status ne null }">
                                     ${t15.status}
@@ -532,8 +565,107 @@
                     </tr>
                 </table>
             </div>
+            <div id="sidebar">
+                <div id = "main">
+                    <div id="kyhieu">
+                        <h2 style="background-color:orange;">Ký Hiệu Chấm Công</h2>
+                        <table id="table2">
+                            <tbody>
+                                <tr>
+                                    <th>Đi Làm</th>
+                                    <td>Y</td>
+                                </tr>
+                                <tr>
+                                    <th>Ốm, Điều dưỡng</th>
+                                    <td>O</td>
+                                </tr>
+                                <tr>
+                                    <th>Con ốm </th>
+                                    <td>Co</td>
+                                </tr>
+                                <tr>
+                                    <th>Thai sản</th>
+                                    <td>TS</td>
+                                </tr>
+                                <tr>
+                                    <th>Chủ Nhật</th>
+                                    <td>CN</td>
+                                </tr>
+                                <tr>
+                                    <th>Nghỉ Lễ </th>
+                                    <td>NL</td>
+                                </tr>
+                                <tr>
+                                    <th>Nghỉ Bù </th>
+                                    <td>NB</td>
+                                </tr>
+                                <tr>
+                                    <th>Nghỉ Nửa Ngày Không Lương</th>
+                                    <td>1/2K</td>
+                                </tr>
+                                <tr>
+                                    <th>Nghỉ Không Lương  </th>
+                                    <td>K</td>
+                                </tr>
+                                <tr>
+                                    <th>Ngừng Việc </th>
+                                    <td>N </td>
+                                </tr>
+                                <tr>
+                                    <th>Nghỉ Phép</th>
+                                    <td> P</td>
+                                </tr>
+                                <tr>
+                                    <th>Nghỉ Nửa Ngày </th>
+                                    <td> 1/2P</td>
+                                </tr>
+                                <tr>
+                                    <th>Làm Nửa Ngày </th>
+                                    <td>NN</td>
+                                </tr>
+                                <tr>
+                                    <th>Đi Làm </th>
+                                    <td>Y</td>
+                                </tr>
+                                <tr>
+                                    <th>Công Tác </th>
+                                    <td>CT</td>
+                                </tr>
+                                <tr>
+                                    <th>Lý Do Khác </th>
+                                    <td>LD</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p></p>
+
+                    </div>
+
+                    <div id="kyten">
+                        <h4>Người Chấm Công</h4>
+                        <br><br>
+                        <p>(Ký, họ tên)</p>
+                    </div> 
+
+                    <div id="kyten">
+                        <h4>Giám Đốc </h4>
+                        <br><br>
+                        <p>(Ký, họ tên)</p>
+                    </div>
+
+                    <div>
+                        <button class="button button1"><a href="report3">Check</a></button>
+                    </div>
+
+                </div>
+            </div>
 
         </div>
+
+
+
+
 
 
 
@@ -541,99 +673,7 @@
 
 
         <br>
-        <div id = "main">
-            <div id="kyhieu">
-                <h2 style="background-color:orange;">Ký Hiệu Chấm Công</h2>
-                <table id="table2">
-                    <tbody>
-                        <tr>
-                            <th>Đi Làm</th>
-                            <td>Y</td>
-                        </tr>
-                        <tr>
-                            <th>Ốm, Điều dưỡng</th>
-                            <td>O</td>
-                        </tr>
-                        <tr>
-                            <th>Con ốm </th>
-                            <td>Co</td>
-                        </tr>
-                        <tr>
-                            <th>Thai sản</th>
-                            <td>TS</td>
-                        </tr>
-                        <tr>
-                            <th>Chủ Nhật</th>
-                            <td>CN</td>
-                        </tr>
-                        <tr>
-                            <th>Nghỉ Lễ </th>
-                            <td>NL</td>
-                        </tr>
-                        <tr>
-                            <th>Nghỉ Bù </th>
-                            <td>NB</td>
-                        </tr>
-                        <tr>
-                            <th>Nghỉ Nửa Ngày Không Lương</th>
-                            <td>1/2K</td>
-                        </tr>
-                        <tr>
-                            <th>Nghỉ Không Lương  </th>
-                            <td>K</td>
-                        </tr>
-                        <tr>
-                            <th>Ngừng Việc </th>
-                            <td>N </td>
-                        </tr>
-                        <tr>
-                            <th>Nghỉ Phép</th>
-                            <td> P</td>
-                        </tr>
-                        <tr>
-                            <th>Nghỉ Nửa Ngày </th>
-                            <td> 1/2P</td>
-                        </tr>
-                        <tr>
-                            <th>Làm Nửa Ngày </th>
-                            <td>NN</td>
-                        </tr>
-                        <tr>
-                            <th>Đi Làm </th>
-                            <td>Y</td>
-                        </tr>
-                        <tr>
-                            <th>Công Tác </th>
-                            <td>CT</td>
-                        </tr>
-                        <tr>
-                            <th>Lý Do Khác </th>
-                            <td>LD</td>
-                        </tr>
-                    </tbody>
-                </table>
 
-                <p></p>
-
-            </div>
-
-            <div id="kyten">
-                <h4>Người Chấm Công</h4>
-                <br><br>
-                <p>(Ký, họ tên)</p>
-            </div> 
-
-            <div id="kyten">
-                <h4>Giám Đốc </h4>
-                <br><br>
-                <p>(Ký, họ tên)</p>
-            </div>
-
-            <div>
-                <button class="button button1"><a href="inside/report3.jsp">Check</a></button>
-            </div>
-
-        </div>
 
         <!--    <a href="#" id="nutnhan1">TÍNH SỐ NGÀY CÔNG</a>
             <a href="#" id="nutnhan2">TÍNH TIỀN LƯƠNG</a>-->
@@ -644,24 +684,24 @@
         <h1>Danh Sách Những Người Nghỉ Có Lý Do Khác</h1>
         <table style="width:100%">
             <tr></tr>
-            <th>TT</th>
+            <th>Số Nhân Viên</th>
             <th>Tên Nhân Viên</th>
             <th>From</th>
             <th>To</th>
             <th>Lý Do</th>
-            <th>From</th>
-            <tr>Ðã Xác Thực</tr>
+            <th>Ðã Xác Thực</th>
+            <tr></tr>
             <c:forEach items="${requestScope.lea}" var="l">
-                        <tr>
-                            <th>${l.lid}</th>
-                            <th>${l.eid}</th>
-                            <th>${l.from}</th>
-                            <th>${l.to}</th>     
-                            <th>${l.reason}</th>     
-                            <th>${l.check}</th>
-                        </tr>
+                <tr>
+                    <th>${l.lid}</th>
+                    <th>${l.eid}</th>
+                    <th>${l.from}</th>
+                    <th>${l.to}</th>     
+                    <th>${l.reason}</th>     
+                    <th>${l.check}</th>
+                </tr>
 
-                    </c:forEach>
+            </c:forEach>
         </table>
 
 
