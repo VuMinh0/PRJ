@@ -19,6 +19,11 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <jsp:useBean id="dt" class="helper.DateTimeHelper"/>
+    
+            <p>Month</p>
+            <input type="month"">
+            <button type="submit">Go</button>
+        
     <body class="continer">
         <h4>
             <i>
