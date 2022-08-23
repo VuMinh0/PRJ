@@ -24,7 +24,7 @@
         <table style="width:100%">
             <tr></tr>
             <th>Số Nhân Viên</th>
-            <th>Tên Nhân Viên</th>
+            <th>ID Nhân Viên</th>
             <th>From</th>
             <th>To</th>
             <th>Lý Do</th>
